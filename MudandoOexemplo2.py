@@ -43,6 +43,8 @@ while rodando:
         player_x -= player_vel
     if teclas[pygame.K_d] and player_x < largura - player_tam:
         player_x += player_vel   
+    if teclas[pygame.K_SPACE] and player_y > 0:
+        player_y += player_vel
 
     # Movimento do obstáculo
     obs_y += obs_vel
@@ -70,7 +72,8 @@ while rodando:
 
     texto = fonte.render(f"Pontos: {pontos}", True, preto)
     tela.blit(texto, (10, 10))
+    
 
-    pygame.display.update()  # Corrigido (estava "dysplay")
+    pygame.display.update()  
 
 pygame.quit()
